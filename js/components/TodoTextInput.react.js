@@ -16,6 +16,7 @@ var TodoTextInput = React.createClass({
  /**
   * Javaで言う所のインターフェースらしい
   * this.prop.xxxで参照できる項目
+  * 変更できないプロパティ
   */
   propTypes: {
     className: ReactPropTypes.string,
@@ -26,7 +27,9 @@ var TodoTextInput = React.createClass({
   },
  /**
   * 初期化
-  * this.prop.valueがある場合は，その値をない場合は空の値を返す
+  * this.prop.valueがある場合はその値を, ない場合は空の値を返す
+  * こちらは this.state.xxxで参照できる．
+  * 変更はsetState関数ないで実施しなくてなならない
   */
   getInitialState: function() {
     return {
@@ -36,6 +39,7 @@ var TodoTextInput = React.createClass({
 
   /**
    * @return {object}
+   * this.state.valueは上のgetInitialStateに対応している
    */
   render: function() /*object*/ {
     return (
