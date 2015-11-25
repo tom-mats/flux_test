@@ -9,8 +9,7 @@
 
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
-var TodoActions = require('../actions/T
-odoActions');
+var TodoActions = require('../actions/TodoActions');
 var TodoTextInput = require('./TodoTextInput.react');
 
 var cx = require('react/lib/cx');
@@ -32,8 +31,8 @@ var TodoItem = React.createClass({
    */
   render: function() {
     var todo = this.props.todo;
+
     var input;
-    
     if (this.state.isEditing) {
       input =
         <TodoTextInput
